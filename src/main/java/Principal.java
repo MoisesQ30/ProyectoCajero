@@ -17,20 +17,18 @@ public class Principal {
     public static void main(String[] args) {
         
         IngresarMonto ingreso = new IngresarMonto();
+        Retirar retiro = new Retirar();
+        
         // TODO code application logic here
+        
+        
         Usuarios usuario1 = new Usuarios("Moisés","Quesada", 20021 , 1234);
-         }
-        int op=0;
-        int saldo = 100000;
-       
-/* Son todos los usuarios existentes en el proyecto*/
-    public void menu(){
-        op=Integer.parseInt(JOptionPane.showInputDialog(null, "Digite"
+        int op=Integer.parseInt(JOptionPane.showInputDialog(null, "Digite"
              + " una de las opciones que "
                + " muestra el menú : \n 1.Estado de Cuenta   2.Retiro\n "
                + "3.Transferencia         4.Ingresar Monto\n 5.Tipo de Cambio"
-               + "      6.Recarga de celular"));
-     do{
+               + "      6.Recarga de celular\n 7.Cambiar contraseña   8.Salir"));
+        do{
        switch(op){ 
            case 1:
                break;
@@ -43,12 +41,21 @@ public class Principal {
            case 5:
                break;
            case 6:
-               break;}
+               break;
+           case 7:
+               break;
+           
+       }
        
-       }while();
+       }while(op!=8);
     
 }
-}
+        
+         }
+      
+
+    
+        
 
     
 
