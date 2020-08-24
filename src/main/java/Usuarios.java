@@ -13,7 +13,16 @@ public class Usuarios {
   private String nombre = "";
   private String apellido= "";
   private int id=0;
-  private int contrasena=0;
+  private String contrasena="";
+  private int saldo=0;
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
 
     public String getNombre() {
         return nombre;
@@ -39,19 +48,20 @@ public class Usuarios {
         this.id = id;
     }
 
-    public int getContrasena() {
+    public String getContrasena() {
         return contrasena;
     }
 
-    public void setContrasena(int contrasena) {
+    public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
 
-    public Usuarios(String nombre, String apellido, int id, int contrasena) {
+    public Usuarios(String nombre, String apellido, int id, String contrasena, int saldo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.id = id;
         this.contrasena = contrasena;
+        this.saldo = saldo;
     }
     
 }

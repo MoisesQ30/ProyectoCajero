@@ -73,17 +73,20 @@ public class Principal {
            String apellido = JOptionPane.showInputDialog("Digite el apellido. ");
            String ID = JOptionPane.showInputDialog("Digite el id de 5 digitos.");
            String cedula = JOptionPane.showInputDialog("Escriba la cedula.");
-           int pago= Integer.parseInt(JOptionPane.showInputDialog("Digite el monto que desea transferir a " + nombre));
+           
+           if(cedula.length()!=8){
+           JOptionPane.showMessageDialog(null, "--Cedula Erronea--");}
+           else{
+               int pago= Integer.parseInt(JOptionPane.showInputDialog("Digite el monto que desea transferir a " + nombre));
            deposito.setNombre(nombre);
            deposito.setApellido(apellido);
-           deposito.setId(ID);
-           deposito.setCedula(cedula);
+           deposito.setId(ID);deposito.setCedula(cedula);
            deposito.setPago(pago);
            saldoDisponible = saldoDisponible - pago;
            JOptionPane.showMessageDialog(null, " Se transfirio correctamente un monto de " + pago+ " a: \n"
                    + " Nombre : "+ deposito.getNombre() + " \n Apellido: " + deposito.getApellido() + "\n "
                            + " ID : "+ deposito.getId() + " \n Cedula : "+ deposito.getCedula() );
-           usuario1.setSaldo(saldoDisponible);
+           usuario1.setSaldo(saldoDisponible);}
            
                break;// metodo de transferencia
                
@@ -107,8 +110,9 @@ public class Principal {
                
            
            
-           case 5: recarga.RecargaCel();
-           saldoDisponible = saldoDisponible-recarga.RecargaCel();
+           case 5: int cel = Integer.parseInt(JOptionPane.showInputDialog("Digite el número de celular al que desea recaragar."));
+             
+           saldoDisponible = saldoDisponible-recarga.RecargaCel(cel);
            usuario1.setSaldo(saldoDisponible);
            
                break; // metodo para recargar el celular

@@ -11,67 +11,39 @@ import javax.swing.JOptionPane;
  */
 public class Retirar {
     //metodo para retirar dinero
-    public int retirar(){
-    int saldo=100000;
-    String clave = "1234";
-      
-        String ax;                
-        ax = JOptionPane.showInputDialog("Digite el monto a retirar.");
-        
-        if(ax==null){
-            
-        }else{
-            if(!ax.equals("")){            
-                if(ax.equals(clave)){
-                    ax = JOptionPane.showInputDialog(null, "a. 5000  b. 10.000\n c. 20.000  d. 50.000\n e. 100.000 f. Ingresar valor",
-                            "CANTIDAD A RETIRAR", JOptionPane.INFORMATION_MESSAGE);
-                    if(ax!=null){
-                        if(!ax.equals("")){
-                            switch(ax){
-                                case "a":
-                                    if((saldo-5000>=10000)){
-                                        saldo-=5000;
-                                    }                            
-                                    break;
-                                case "b":
-                                   if((saldo-10000>=10000)){
-                                        saldo-=10000;
-                                    }
-                                    break;
-                                case "c":
-                                   if((saldo-20000>=10000)){
-                                    }
-                                    break;
-                                case "d":
-                                    if((saldo-50000>=10000)){
-                                        saldo-=50000;
-                                    }
-                                    break;
-                                case "e":
-                                    if((saldo-100000>=10000)){
-                                        saldo-=100000;
-                                    }
-                                    break;
-                                case "f":
-                                    ax = JOptionPane.showInputDialog(null, "Digite el valor a retirar: ");
-                                    if(!ax.equals("") && auxi.isNum(ax) && (Integer.parseInt(ax)>0) && (saldo-Integer.parseInt(ax)>=10000) ){
-                                        saldo-= Integer.parseInt(ax);
-                                    }
-                                    break;
-                                default:
-                                    JOptionPane.showMessageDialog(null, "Digite una opcion valida", "OPCION INCORRECTA", JOptionPane.ERROR_MESSAGE);
-                                    break;
-                            }             
-                        } 
-                    }
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "La clave ingresada no coincide....");
-                }
-            }
-        }              
-    return saldo;
-/* se retorna el saldo para restarselo al que sale en el main*/ }
+    public int retirar(int saldo){
+    
+   int op = 0;
+   if(saldo<5000){
+       JOptionPane.showMessageDialog(null, "--Tu saldo es menor del requerido--");
+   }
+   else{
+       op = Integer.parseInt(JOptionPane.showInputDialog("Digite la opción requerida : \n 1. 5000  2. 10000"
+   + "\n3. 15000  4. 20000 \n5. 50000  6. 100000 \n7. Escribir monto."));
+   switch(op){
+       case 1: saldo=saldo-5000;
+       break;
+       case 2: saldo=saldo-10000;
+       break;
+       case 3: saldo = saldo - 15000;
+       break;
+       case 4: saldo = saldo - 20000;
+       break;
+       case 5: saldo = saldo-50000;
+       break;
+       case 6: saldo=saldo-100000;
+       break;
+       case 7: int monto = Integer.parseInt(JOptionPane.showInputDialog("--Ingrese el monto--"));
+       if(monto>saldo){
+       }else{saldo = saldo-monto;}break;
+   
+   
+   }
+   
+   }
+ return saldo;}
+
+
 }
    
     

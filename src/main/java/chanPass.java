@@ -12,8 +12,9 @@ import javax.swing.JOptionPane;
  * @author moi_queces30
  */
 public class chanPass {
-    String clave = "1234";
-    public void chanPass(){
+    
+    
+      public String chanPass(String clave){
       String ax, cl;
         
         ax = JOptionPane.showInputDialog(null, "Digite su clave....");
@@ -24,19 +25,19 @@ public class chanPass {
                    if(cl!=null){
                        if(cl.length()>3){
                             ax=null;
-                            ax="Su anterior clave es:"+clave;
+                            ax=" Su anterior clave es : "+clave;
                             clave=cl;
-                            ax+="Su nueva clave es: "+clave; 
+                            ax+=" \n Su nueva clave es : "+clave; 
                             JOptionPane.showMessageDialog(null, ax);
                        }
                        else{
-                            JOptionPane.showMessageDialog(null, "La clave que desea cambiar es muy corta...");
+                            JOptionPane.showMessageDialog(null, "La clave que desea cambiar es muy corta... ");
                        }
                    }                   
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "La clave ingresada no coincide....");
+                    JOptionPane.showMessageDialog(null, "La clave ingresada no coincide....  ");
                 }
             }
-        }} 
+        }return clave; }
 }

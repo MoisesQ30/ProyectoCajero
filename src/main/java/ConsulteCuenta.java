@@ -12,10 +12,13 @@ import javax.swing.JOptionPane;
  * @author moi_queces30
  */
 public class ConsulteCuenta {
+    public void Cuenta(String nombre ,String apellido , int id ,int saldo ){
+        JOptionPane.showMessageDialog(null, "--Estado de Cuenta--");
+        JOptionPane.showMessageDialog(null, " Nombre : "+ nombre + "\n Apellido : "
+        + apellido + "\n ID : "+ id + "\n Saldo Disponible : "+ saldo +" colones.");
     
-    String usuario;
-    int dinero;
-    
+   
+    }
     
                   
 }
